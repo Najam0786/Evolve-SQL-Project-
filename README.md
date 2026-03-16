@@ -15,7 +15,7 @@ This project builds a complete **staging → core → semantic** data pipeline i
 | Attribute        | Details                                                                |
 |------------------|------------------------------------------------------------------------|
 | **Source**       | [Kaggle – Goldman Sachs Stock Data (1999–2026)](https://www.kaggle.com/datasets/...) |
-| **Size**         | ~6,700 rows per file (~40,000 rows total after union)                  |
+| **Size**         | ~6,700 rows per file (~40,000 rows in staging, reduced to ~29,500 rows in fact table after cleaning and deduplication) |
 | **Key Columns**  | Date, Open, High, Low, Close, Volume, Dividends, Stock Splits, Source  |
 
 **CSV Files:**
@@ -118,7 +118,7 @@ source sql/07_advanced_sql.sql;     -- Test advanced features
 
 | Check                  | Result                                                                 |
 |------------------------|------------------------------------------------------------------------|
-| **Row counts**         | Each staging table has ~6,700 rows (verified in `02_load_staging.sql`) |
+| **Row counts**         | Each staging table has ~6,700 rows (~40,000 total in staging, reduced to ~29,500 rows in fact table after cleaning and deduplication) |
 | **Nulls**              | No critical nulls in core tables (checked in `06_quality_checks.sql`)  |
 | **Orphan foreign keys**| Zero orphan records in fact table                                      |
 | **Duplicates**         | Unique constraint (`date_id`, `source_id`) prevents duplicates; none found |

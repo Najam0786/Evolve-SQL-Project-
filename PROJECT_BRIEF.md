@@ -11,7 +11,7 @@
 | **Name**        | Goldman Sachs (GS) Stock Data (1999–2026)                               |
 | **Source**       | [Kaggle](https://www.kaggle.com/datasets/...)                          |
 | **Files**        | 6 CSV files (identical structure, except NASDAQ lacks dividends/splits) |
-| **Rows per File**| ~6,700+ records                                                        |
+| **Rows per File**| ~6,700 rows (~40,000 rows in staging, reduced to ~29,500 rows in fact table after cleaning and deduplication) |
 
 **Description:** 27 years of daily trading data for Goldman Sachs stock — including OHLC prices, volume, dividends, and stock splits — sourced from six financial data providers:
 
